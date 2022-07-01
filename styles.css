@@ -1,0 +1,61 @@
+*, *::before, *::after {
+    /*whats up with this selector? all the elements?*/
+  box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, rgb(69, 69, 180) , rgb(97, 155, 97))
+    /*check this explained.. to right?*/
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center; /*investigate this property, did not pay attention and I've written allign-items*/
+    min-height: 100vh;
+    grid-template-columns: repeat(4,100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid whitesmoke;
+    outline: none;
+    background-color: grey;
+}
+
+.calculator-grid > button:hover {
+    background-color: white;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    /*whats up with this grid?*/
+    background-color: rgba(0,0,0,.75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around; /*investigate this property, did not pay attention and I've written the value space-between*/
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: grey;
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: grey;
+    font-size: 1.5rem;
+}
